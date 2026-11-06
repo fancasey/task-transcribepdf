@@ -1,0 +1,62 @@
+_ > nanoagent.plugin.v0001.ManifestConfig:
+id: transcribe-exams
+name: Exam PDF Transcription
+version: 0.8.0
+status: ready
+spec: nanoagent.plugin/v0001
+
+runtime > nanoagent.plugin.v0001.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+
+permissions > nanoagent.plugin.v0001.PermissionsConfig:
+  network > nanoagent.plugin.v0001.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.v0001.FilesystemConfig:
+    write: [workspace]
+
+tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
+  read_pdf:
+    description: Read up to three pages of a bundled exam, rating guide, or selected student PDF as images and embedded text
+  save_transcription:
+    description: Save a structured transcription JSON for one exam, rating guide, or student PDF
+
+tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
+  transcribe-exams:
+    description: Transcribe the ELA or Algebra II exam and rating guide with the selected student responses
+    runner: agent
+    tools: [read_pdf, save_transcription]
+    reference: null
+    instructions: |-
+      For each subject with selected student IDs, transcribe its questions PDF, rubric PDF, and only those
+      students' response PDFs. Use subject alg2 for math. Read all pages of each PDF in small batches
+      and save each completed document with save_transcription. Use PDF page numbers starting at 1.
+      Use images for handwriting, math, layout, and tables. Use embedded text when it helps.
+      Copy faithfully, preserving errors and crossed-out work. Mark unreadable spans [illegible].
+      Do not solve the questions or grade the student.
+
+      Save questions as an object keyed by printed question ID. For ELA use "2" for the Part 2 essay.
+      For the question PDF each record has part (a string, e.g. II or 2), prompt (text), and source_pages
+      (ordered page numbers). Add subitems for distinct prompts within a question as an ordered list
+      of objects with kind "prompt", text and source_pages. Keep a continued question under its original
+      ID. For the ELA essay, subitems is an object keyed by "Source 1" through "Source 4", with each
+      value containing kind "source", text and source_pages. Preserve shared directions under
+      supplementary_info. Use part_directions (keyed by part, with text and source_pages per entry) for
+      math and booklet_directions (text and source_pages) for ELA.
+
+      For the math rating guide each record has part, max_points, criteria_by_score (an object
+      keyed by printed score, with each value an ordered list of alternative criteria), source_pages,
+      and learning_standard (cluster and source_page) when given. Record general_scoring_guidance,
+      part_scoring_guidance and multiple_choice_standards under supplementary_info when present.
+      General scoring guidance is an ordered list of objects with text and source_pages. Part scoring
+      guidance is keyed by part with those same fields. Multiple choice standards are keyed by item
+      number, with item_type, max_points, cluster, and source_page per entry.
+      For the ELA rubric use part, max_points, source_pages, criteria (an ordered list of objects with
+      criterion and score_descriptors, an object keyed by score), and scoring_notes. Use rubric_heading
+      under supplementary_info.
+
+      For student PDFs use one response_segments list per question. Each segment has source_page and
+      text. Use one segment per response page, in order, including blank response pages. Preserve the
+      reading order of work for subprompts sharing a page. Add visual_note for non-text work such as
+      graphs. For ELA record printed anchor labels separately under supplementary_info.source_anchor_labels.
+      After saving every required file, submit folder "transcriptions" and exactly the saved file paths.

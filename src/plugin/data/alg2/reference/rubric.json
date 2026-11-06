@@ -1,0 +1,505 @@
+{
+  "document_type": "rubric",
+  "source": "../rubric.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "Observational study, and a correct explanation is written."
+        ],
+        "1": [
+          "Observational study, but the explanation is incomplete."
+        ],
+        "0": [
+          "Observational study, but the explanation is incorrect or missing.",
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        4
+      ],
+      "learning_standard": {
+        "cluster": "S-IC.B",
+        "source_page": 11
+      }
+    },
+    "26": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "2x² + x − 2, and correct work is shown."
+        ],
+        "1": [
+          "Appropriate work is shown, but one computational or simplification error is made.",
+          "Appropriate work is shown, but one conceptual error is made.",
+          "Appropriate work is shown, but the polynomial is not written in standard form.",
+          "2x² + x − 2, but no work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        4
+      ],
+      "learning_standard": {
+        "cluster": "F-BF.A",
+        "source_page": 11
+      }
+    },
+    "27": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "±3, 4, and correct algebraic work is shown."
+        ],
+        "1": [
+          "Appropriate work is shown, but one computational or factoring error is made.",
+          "Appropriate work is shown, but one conceptual error is made.",
+          "(x − 4)(x + 3)(x − 3) is written, but no further correct work is shown.",
+          "±3, 4, but a method other than algebraic is used.",
+          "±3, 4, but no work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        5
+      ],
+      "learning_standard": {
+        "cluster": "A-APR.B",
+        "source_page": 11
+      }
+    },
+    "29": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "−21 − 20i or equivalent, and a correct justification is given."
+        ],
+        "1": [
+          "Appropriate work is shown, but one computational or simplification error is made.",
+          "Appropriate work is shown, but one conceptual error is made.",
+          "−21 − 20i, but the justification is incomplete, incorrect, or missing."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        5
+      ],
+      "learning_standard": {
+        "cluster": "N-CN.A",
+        "source_page": 11
+      }
+    },
+    "30": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "c(t) = 2.7(1/2)^(t/30) or equivalent."
+        ],
+        "1": [
+          "Appropriate work is shown, but one computational or notation error is made.",
+          "Appropriate work is shown, but one conceptual error is made.",
+          "2.7(1/2)^(t/30) is stated."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        6
+      ],
+      "learning_standard": {
+        "cluster": "F-BF.A",
+        "source_page": 11
+      }
+    },
+    "31": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "2, and correct algebraic work is shown."
+        ],
+        "1": [
+          "Appropriate work is shown, but one computational error is made.",
+          "Appropriate work is shown, but one conceptual error is made.",
+          "2, but no work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        6
+      ],
+      "learning_standard": {
+        "cluster": "F-BF.B",
+        "source_page": 11
+      }
+    },
+    "32": {
+      "part": "II",
+      "max_points": 2,
+      "criteria_by_score": {
+        "2": [
+          "y = 5.381(1.239)^x"
+        ],
+        "1": [
+          "One computational, notation, or rounding error is made.",
+          "One conceptual error is made.",
+          "5.381(1.239)^x is stated."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        6
+      ],
+      "learning_standard": {
+        "cluster": "A-SSE.B",
+        "source_page": 11
+      }
+    },
+    "33": {
+      "part": "III",
+      "max_points": 4,
+      "criteria_by_score": {
+        "4": [
+          "2x² − 6x + 1 − 3/(x² + 3x − 5) or equivalent, and correct work is shown."
+        ],
+        "3": [
+          "Appropriate work is shown, but one computational error is made.",
+          "Appropriate work is shown, but the result is not expressed in the form q(x) + r(x)/d(x)."
+        ],
+        "2": [
+          "Appropriate work is shown, but two computational errors are made.",
+          "Appropriate work is shown, but one conceptual error is made."
+        ],
+        "1": [
+          "Appropriate work is shown, but one conceptual error and one computational error are made.",
+          "2x² − 6x + 1 − 3/(x² + 3x − 5), but no work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        7
+      ],
+      "learning_standard": {
+        "cluster": "A-APR.D",
+        "source_page": 11
+      }
+    },
+    "34": {
+      "part": "III",
+      "max_points": 4,
+      "criteria_by_score": {
+        "4": [
+          "2, 3, f(x) = 3sin(πx) + 1, or equivalent."
+        ],
+        "3": [
+          "Appropriate work is shown, but one computational or notation error is made."
+        ],
+        "2": [
+          "Appropriate work is shown, but two or more computational or notation errors are made.",
+          "2 and 3, but no further correct work is shown.",
+          "f(x) = 3sin(πx) + 1, but no further correct work is shown."
+        ],
+        "1": [
+          "2 or 3, but no further correct work is shown.",
+          "3sin(πx) + 1, but no further correct work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        8
+      ],
+      "learning_standard": {
+        "cluster": "F-TF.B",
+        "source_page": 11
+      }
+    },
+    "35": {
+      "part": "III",
+      "max_points": 4,
+      "criteria_by_score": {
+        "4": [
+          "(0.59, 0.71) or equivalent, correct work is shown, a negative response is indicated, and a correct explanation is written."
+        ],
+        "3": [
+          "Appropriate work is shown, but one computational or rounding error is made.",
+          "Appropriate work is shown, but the explanation is incomplete."
+        ],
+        "2": [
+          "Appropriate work is shown to find the interval, but no further correct work is shown.",
+          "No and a correct explanation is written, but no further correct work is shown."
+        ],
+        "1": [
+          "(0.59, 0.71), but no work is shown."
+        ],
+        "0": [
+          "No, but the explanation is incorrect or missing.",
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        8
+      ],
+      "learning_standard": {
+        "cluster": "S-IC.B",
+        "source_page": 11
+      }
+    },
+    "36": {
+      "part": "IV",
+      "max_points": 6,
+      "criteria_by_score": {
+        "6": [
+          "184, correct work is shown to find −4.5, and a correct interpretation is written, and 19.2, and correct work is shown."
+        ],
+        "5": [
+          "Appropriate work is shown, but one computational or rounding error is made.",
+          "Appropriate work is shown, but the interpretation is incomplete, incorrect, or missing."
+        ],
+        "4": [
+          "Appropriate work is shown, but two computational or rounding errors are made."
+        ],
+        "3": [
+          "Appropriate work is shown to find −4.5, and a correct interpretation is written, but no further correct work is shown."
+        ],
+        "2": [
+          "Appropriate work is shown to find −4.5, but no further correct work is shown.",
+          "Appropriate work is shown to find 19.2, but no further correct work is shown."
+        ],
+        "1": [
+          "184 is stated, but no further correct work is shown.",
+          "A correct interpretation is written, but no further correct work is shown.",
+          "−4.5 or 19.2, but no work is shown."
+        ],
+        "0": [
+          "A zero response does not contain enough relevant course-level work to receive any credit, does not satisfy the criteria for one or more credits, or is a correct response that was obtained by an obviously incorrect procedure."
+        ]
+      },
+      "source_pages": [
+        9
+      ],
+      "learning_standard": {
+        "cluster": "F-IF.B",
+        "source_page": 11
+      }
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Mathematical expressions use Unicode or linear notation. Refer to the PDF for the original visual layout."
+    ],
+    "general_scoring_guidance": [
+      {
+        "text": "FOR TEACHERS ONLY\nThe University of the State of New York\nREGENTS HIGH SCHOOL EXAMINATION\nALGEBRA II\nTuesday, August 18, 2026 — 12:30 to 3:30 p.m., only\nRATING GUIDE\nUpdated information regarding the rating of this examination may be posted on the\nNew York State Education Department’s website during the rating period. Check this\nwebsite at: https://www.nysed.gov/state-assessment/high-school-regents-examinations and\nselect the link “Scoring Information” for any recently posted information regarding this\nexamination. This site should be checked before the rating process for this examination\nbegins and several times throughout the Regents Examination period.\nThe Department is providing supplemental scoring guidance, the “Model Response\nSet,” for the Regents Examination in Algebra II. This guidance is intended to be\npart of the scorer training. Schools should use the Model Response Set along with\nthe rubrics in the Rating Guide to help guide scoring of student work. While not\nreflective of all scenarios, the model responses selected for the Model Response Set\nillustrate how less common student responses to constructed-response questions may\nbe scored. The Model Response Set will be available on the Department’s website at\nhttps://www.nysedregents.org/algebratwo/.",
+        "source_pages": [
+          1
+        ]
+      },
+      {
+        "text": "Mechanics of Rating\nThe following procedures are to be followed for scoring student answer papers for the\nRegents Examination in Algebra II. More detailed information about scoring is provided in\nthe publication Directions for Scoring Regents Examinations.\nDo not attempt to correct the student’s work by making insertions or changes of any kind.\nIn scoring the constructed-response questions, use check marks to indicate student errors.\nUnless otherwise specified, mathematically correct variations in the answers will be allowed.\nUnits need not be given when the wording of the questions allows such omissions.\nEach student’s answer paper is to be scored by a minimum of three mathematics\nteachers. No one teacher is to score more than approximately one-third of the constructed-\nresponse questions on a student’s paper. Teachers may not score their own students’ answer\npapers. On the student’s separate answer sheet, for each question, record the number of\ncredits earned and the teacher’s assigned rater/scorer letter.\nSchools are not permitted to rescore any of the constructed-response questions\non this exam after each question has been rated once, regardless of the final exam\nscore. Schools are required to ensure that the raw scores have been added correctly\nand that the resulting scale score has been determined accurately.\nRaters should record the student’s scores for all questions and the total raw score on\nthe student’s separate answer sheet. Then the student’s total raw score should be converted\nto a scale score by using the conversion chart that will be posted on the Department’s\nwebsite at: https://www.nysed.gov/state-assessment/high-school-regents-examinations on\nthe day of the examination. Because scale scores corrsponding to raw scores in the\nconversion chart may change from one administration to another, it is crucial that, for each\nadministration, the conversion chart provided for that administration be used to determine\nthe student’s final score. The student’s scale score should be entered in the box provided on\nthe student’s separate answer sheet. The scale score is the student’s final examination score.",
+        "source_pages": [
+          2
+        ]
+      },
+      {
+        "text": "General Rules for Applying Mathematics Rubrics\nI. General Principles for Rating\nThe rubrics for the constructed-response questions on the Regents Examination in Algebra II are designed\nto provide a systematic, consistent method for awarding credit. The rubrics are not to be considered all-\ninclusive; it is impossible to anticipate all the different methods that students might use to solve a given\nproblem. Each response must be rated carefully using the teacher’s professional judgment and knowledge\nof mathematics; all calculations must be checked. The specific rubrics for each question must be applied\nconsistently to all responses. In cases that are not specifically addressed in the rubrics, raters must follow\nthe general rating guidelines in the publication Directions for Scoring Regents Examinations, use their\nown professional judgment, confer with other mathematics teachers, and/or contact the State Education\nDepartment for guidance. During each Regents Examination administration period, rating questions may\nbe referred directly to the Education Department. The contact numbers are sent to all schools before each\nadministration period.\nII. Full-Credit Responses\nA full-credit response provides a complete and correct answer to all parts of the question. Sufficient work is\nshown to enable the rater to determine how the student arrived at the correct answer.\nWhen the rubric for the full-credit response includes one or more examples of an acceptable method\nfor solving the question (usually introduced by the phrase “such as”), it does not mean that there are no\nadditional acceptable methods of arriving at the correct answer. Unless otherwise specified, mathematically\ncorrect alternative solutions should be awarded credit. The only exceptions are those questions that specify\nthe type of solution that must be used; e.g., an algebraic solution or a graphic solution. A correct solution\nusing a method other than the one specified is awarded half the credit of a correct solution using the\nspecified method.\nIII. Appropriate Work\nFull-Credit Responses: The directions in the examination booklet for all the constructed-response questions\nstate: “Clearly indicate the necessary steps, including appropriate formula substitutions, diagrams, graphs,\ncharts, etc.” The student has the responsibility of providing the correct answer and showing how that answer\nwas obtained. The student must “construct” the response; the teacher should not have to search through\na group of seemingly random calculations scribbled on the student paper to ascertain what method the\nstudent may have used.\nResponses With Errors: Rubrics that state “Appropriate work is shown, but…” are intended to be used with\nsolutions that show an essentially complete response to the question but contain certain types of errors,\nwhether computational, rounding, graphing, or conceptual. If the response is incomplete; i.e., an equation\nis written but not solved or an equation is solved but not all of the parts of the question are answered,\nappropriate work has not been shown. Other rubrics address incomplete responses.\nIV. Multiple Errors\nComputational Errors, Graphing Errors, and Rounding Errors: Each of these types of errors results in a\n1-credit deduction. Any combination of two of these types of errors results in a 2-credit deduction. No more than\n2 credits should be deducted for such mechanical errors in a 4-credit question and no more than 3 credits\nshould be deducted in a 6-credit question. The teacher must carefully review the student’s work to determine\nwhat errors were made and what type of errors they were.\nConceptual Errors: A conceptual error involves a more serious lack of knowledge or procedure. Examples of\nconceptual errors include using the incorrect formula for the area of a figure, choosing the incorrect trigono-\nmetric function, or multiplying the exponents instead of adding them when multiplying terms with exponents.\nIf a response shows repeated occurrences of the same conceptual error, the student should not be penalized\ntwice. If the same conceptual error is repeated in responses to other questions, credit should be deducted\nin each response.\nFor 4- and 6-credit questions, if a response shows one conceptual error and one computational, graphing, or\nrounding error, the teacher must award credit that takes into account both errors. Refer to the rubric for\nspecific scoring guidelines.",
+        "source_pages": [
+          3
+        ]
+      },
+      {
+        "text": "The Chart for Determining the Final Examination Score for the August 2026\nRegents Examination in Algebra II will be posted on the Department’s website at:\nhttps://www.nysed.gov/state-assessment/high-school-regents-examinations on the day\nof the examination. Conversion charts provided for previous administrations of the\nRegents Examination in Algebra II must NOT be used to determine students’ final\nscores for this administration.\nOnline Submission of Teacher Evaluations of the Test to the Department\nSuggestions and feedback from teachers provide an important contribution to the\ntest development process. The Department provides an online evaluation form for State\nassessments. It contains spaces for teachers to respond to several specific questions and to\nmake suggestions. Instructions for completing the evaluation form are as follows:\n1. Go to https://www.nysed.gov/state-assessment/teacher-feedback-state-assessments.\n2. Click Regents Examinations.\n3. Complete the required demographic fields.\n4. Select the test title from the Regents Examination dropdown list.\n5. Complete each evaluation question and provide comments in the space provided.\n6. Click the SUBMIT button at the bottom of the page to submit the completed form.",
+        "source_pages": [
+          12
+        ]
+      }
+    ],
+    "part_scoring_guidance": {
+      "II": {
+        "text": "Part II\nFor each question, use the specific criteria to award a maximum of 2 credits. Unless\notherwise specified, mathematically correct alternative solutions should be awarded\nappropriate credit.",
+        "source_pages": [
+          4
+        ]
+      },
+      "III": {
+        "text": "Part III\nFor each question, use the specific criteria to award a maximum of 4 credits. Unless\notherwise specified, mathematically correct alternative solutions should be awarded\nappropriate credit.",
+        "source_pages": [
+          7
+        ]
+      },
+      "IV": {
+        "text": "Part IV\nFor this question, use the specific criteria to award a maximum of 6 credits. Unless\notherwise specified, mathematically correct alternative solutions should be awarded\nappropriate credit.",
+        "source_pages": [
+          9
+        ]
+      }
+    },
+    "multiple_choice_standards": {
+      "1": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "N-CN.A",
+        "source_page": 10
+      },
+      "2": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-IF.B",
+        "source_page": 10
+      },
+      "3": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-LE.A",
+        "source_page": 10
+      },
+      "4": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "S-CP.B",
+        "source_page": 10
+      },
+      "5": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-REI.D",
+        "source_page": 10
+      },
+      "6": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-IF.A",
+        "source_page": 10
+      },
+      "7": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-REI.C",
+        "source_page": 10
+      },
+      "8": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "N-RN.A",
+        "source_page": 10
+      },
+      "9": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-IF.B",
+        "source_page": 10
+      },
+      "10": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-REI.A",
+        "source_page": 10
+      },
+      "11": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-TF.A",
+        "source_page": 10
+      },
+      "12": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-CED.A",
+        "source_page": 10
+      },
+      "13": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "S-CP.A",
+        "source_page": 10
+      },
+      "14": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-APR.B",
+        "source_page": 10
+      },
+      "15": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-TF.C",
+        "source_page": 10
+      },
+      "16": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-REI.A",
+        "source_page": 10
+      },
+      "17": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "S-ID.A",
+        "source_page": 10
+      },
+      "18": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "S-IC.A",
+        "source_page": 10
+      },
+      "19": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-SSE.B",
+        "source_page": 10
+      },
+      "20": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-REI.B",
+        "source_page": 10
+      },
+      "21": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "A-SSE.A",
+        "source_page": 11
+      },
+      "22": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-TF.A",
+        "source_page": 11
+      },
+      "23": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-BF.B",
+        "source_page": 11
+      },
+      "24": {
+        "item_type": "Multiple Choice",
+        "max_points": 2,
+        "cluster": "F-TF.B",
+        "source_page": 11
+      }
+    }
+  }
+}

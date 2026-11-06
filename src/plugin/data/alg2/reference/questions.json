@@ -1,0 +1,179 @@
+{
+  "document_type": "questions",
+  "source": "../questions.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "part": "II",
+      "prompt": "In order to keep the store properly stocked with produce, a grocery store manager wants to\ndetermine the most popular day of the week for people to buy apples and oranges. She randomly\ncollects a sample of sales records for each day for three consecutive weeks. Is this type of data\ncollection method a survey, an observational study, or an experiment? Explain your reasoning.",
+      "source_pages": [
+        1
+      ]
+    },
+    "26": {
+      "part": "II",
+      "prompt": "Given the following functions f(x) = 2x² + 3x − 7 and g(x) = 2x − 5, determine f(x) − g(x), and\nexpress the result in standard form.",
+      "source_pages": [
+        2
+      ]
+    },
+    "27": {
+      "part": "II",
+      "prompt": "Determine algebraically the zeros of f(x) = x³ − 4x² − 9x + 36.",
+      "source_pages": [
+        3
+      ]
+    },
+    "29": {
+      "part": "II",
+      "prompt": "Express (−2 + √(−25))² in simplest a + bi form. Justify your answer.",
+      "source_pages": [
+        4
+      ]
+    },
+    "30": {
+      "part": "II",
+      "prompt": "The most common radioactive form of cesium is cesium-137. The half-life of cesium-137 is\n30 years.\nSuppose 2.7 micrograms of cesium-137 are found in a soil sample. Write a function for the amount\nof cesium-137 remaining, c(t), in micrograms, in terms of the number of years, t, since the soil\nsample was taken.",
+      "source_pages": [
+        5
+      ]
+    },
+    "31": {
+      "part": "II",
+      "prompt": "Solve algebraically for x:\nΣ from a = 0 to 4 of (ax − 3) = 5",
+      "source_pages": [
+        6
+      ]
+    },
+    "32": {
+      "part": "II",
+      "prompt": "Given the exponential function y = 5.381e^(0.214x), rewrite the function in the form of y = a(b)^x,\nrounding values to the nearest thousandth.",
+      "source_pages": [
+        7
+      ]
+    },
+    "33": {
+      "part": "III",
+      "prompt": "Determine the quotient and remainder of the expression below.\n(2x⁴ − 27x² + 33x − 8) / (x² + 3x − 5)\n\nExpress the result in the form q(x) + r(x)/d(x).",
+      "source_pages": [
+        8
+      ]
+    },
+    "34": {
+      "part": "III",
+      "prompt": "The sinusoidal function f is graphed below.\n\n[Graph with axes x and f(x). The sinusoid passes through (0, 1) rising, has peaks at (0.5, 4) and (2.5, 4), and troughs at (1.5, −2) and (3.5, −2).]",
+      "source_pages": [
+        9
+      ],
+      "subitems": [
+        {
+          "kind": "prompt",
+          "text": "State the period of the function f.",
+          "source_pages": [
+            9
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "State the amplitude of the function f.",
+          "source_pages": [
+            9
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "Write the equation in the form f(x) = A sin(Bx) + D to represent the sinusoidal function.",
+          "source_pages": [
+            9
+          ]
+        }
+      ]
+    },
+    "35": {
+      "part": "III",
+      "prompt": "A principal wonders what percentage of parents at her large high school restrict their child’s\ncell phone privileges. The school surveys a random sample of 250 parents at the school and finds\nthat 65% of them restrict their child’s cell phone privileges. The school runs a simulation with\n400 samples of 250 parents, assuming that 65% of them restrict cell phone privileges.\nThe simulation results are shown below.\n\n[Histogram. Horizontal axis: Sample Proportions, 0.560 to 0.750 in increments of 0.010. Vertical axis: Frequency, 0 to 70 in increments of 10. Mean = 0.652. SD = 0.031.] Frequencies in successive bins from 0.560–0.570 through 0.740–0.750: 1, 4, 2, 8, 18, 21, 43, 37, 61, 40, 54, 30, 35, 17, 14, 7, 4, 3, 1.",
+      "source_pages": [
+        10
+      ],
+      "subitems": [
+        {
+          "kind": "prompt",
+          "text": "Use the simulation to determine an interval containing the middle 95% of simulated proportions.\nJustify your answer. Round all values to the nearest hundredth.",
+          "source_pages": [
+            10
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "The school district’s superintendent worries that less than half of parents restrict their child’s\ncell phone privileges. Do the simulation results support the superintendent’s concern? Explain.",
+          "source_pages": [
+            10
+          ]
+        }
+      ]
+    },
+    "36": {
+      "part": "IV",
+      "prompt": "Lubin pours green tea into a cup to cool. The function below can be used to model the temperature,\nin degrees Fahrenheit, of Lubin’s tea x minutes after he pours it into the cup.\nT(x) = 110e^(−0.0453x) + 74",
+      "source_pages": [
+        11,
+        12
+      ],
+      "subitems": [
+        {
+          "kind": "prompt",
+          "text": "State the temperature of the tea, in degrees Fahrenheit, when Lubin poured it into the cup.",
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "To the nearest tenth, use T(x) to determine the average rate of change in degrees per minute,\nfrom x = 0 to x = 5.",
+          "source_pages": [
+            11
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "Interpret the value of the average rate of change within the given context.",
+          "source_pages": [
+            12
+          ]
+        },
+        {
+          "kind": "prompt",
+          "text": "To the nearest tenth of a minute, determine how long Lubin must wait after pouring his tea into\nthe cup before the tea’s temperature reaches 120° Fahrenheit.",
+          "source_pages": [
+            12
+          ]
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Mathematical expressions use Unicode or linear notation. Refer to the PDF for the original visual layout."
+    ],
+    "part_directions": {
+      "II": {
+        "text": "Part II\nAnswer all seven questions in this part. Each correct answer will receive 2 credits. Clearly\nindicate the necessary steps, including appropriate formula substitutions, diagrams, graphs,\ncharts, etc. Utilize the information provided for each question to determine your answer.\nNote that diagrams are not necessarily drawn to scale. For all questions in this part, a correct\nnumerical answer with no work shown will receive only 1 credit. All answers should be\nwritten in pen, except for graphs and drawings, which should be done in pencil. [14]",
+        "source_pages": [
+          1
+        ]
+      },
+      "III": {
+        "text": "Part III\nAnswer all 3 questions in this part. Each correct answer will receive 4 credits. Clearly\nindicate the necessary steps, including appropriate formula substitutions, diagrams, graphs,\ncharts, etc. Utilize the information provided for each question to determine your answer.\nNote that diagrams are not necessarily drawn to scale. For all questions in this part, a correct\nnumerical answer with no work shown will receive only 1 credit. All answers should be\nwritten in pen, except for graphs and drawings, which should be done in pencil. [12]",
+        "source_pages": [
+          8
+        ]
+      },
+      "IV": {
+        "text": "Part IV\nAnswer the question in this part. A correct answer will receive 6 credits. Clearly indicate\nthe necessary steps, including appropriate formula substitutions, diagrams, graphs, charts, etc.\nUtilize the information provided to determine your answer. Note that diagrams are not\nnecessarily drawn to scale. A correct numerical answer with no work shown will receive only\n1 credit. All answers should be written in pen, except for graphs and drawings, which should be\ndone in pencil. [6]",
+        "source_pages": [
+          11
+        ]
+      }
+    }
+  }
+}

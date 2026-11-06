@@ -1,0 +1,119 @@
+{
+  "document_type": "student_response",
+  "source": "../2.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "It’s an observational study, because the manager\nisn’t asking anyone about their preferences neither\nhe is changing conditions of the experiment, so I can\neliminate these two options. What I’m left with\nis an observational study.\n\nAnswer: observational study.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "(2x² + 3x − 7) − (2x − 5)\n2x² + 3x − 7\n−2x + 5\n2x² + x − 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x, −4; x², −9\nx³, −4x²; −9x, +36\nf(x) = x³ − 4x² − 9x + 36\n(x − 4)(x² − 9)\n0 = (x − 4)(x + 3)(x − 3)\nx − 4 = 0; +4, +4; x = 4\nx + 3 = 0; −3, −3; x = −3\nx − 3 = 0; +3, +3; x = 3\nf(4) = 4³ − 4(4)² − 9(4) + 36 = 0\nf(−3) = −3³ − 4(−3)² − 9(−3) + 36 = 0\nf(3) = 3³ − 4(3)² − 9(3) + 36 = 0",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "(−2 + 5i)²\n(−2 + 5i)(−2 + 5i)\n4 − 10i − 10i − 25\n−20i − 21",
+          "transcription_method": "manual",
+          "visual_note": "A small cycle diagram for powers of i is drawn next to the prompt."
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "c(t) = 2.7(0.5)^(t/30)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "a = 0; a = 1; a = 2; a = 3; a = 4; 5\n0(x) − 3 =\n1(x) − 3 =\n2(x) − 3 =\n3(x) − 3 =\n4(x) − 3 =\n5\nSₙ = n(a₁ + aₙ)/2\n5 = 5(−3 + 4x − 3)/2\n10 = 5(−3 + 4x − 3)\n2 = (−3 + 4x − 3)\n2 = (4x − 6)\n8 = 4x\nx = 2\n−3 + x − 3 + 2x − 3 + 3x − 3 + 4x − 3 = 5\n−15 + 10x = 5\n10x = 20\nx = 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "y = 5.381(1.239)^x",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "2x² − 6x + 1\n(x² + 3x − 5) ) 2x⁴ − 27x² + 33x − 8\n−2x⁴ − 6x³ + 10x²\n−6x³ − 17x² + 33x − 8\n+6x³ + 18x² − 30x\nx² + 3x − 8\n−x² − 3x + 5\n−3\n(2x⁴ − 27x² + 33x − 8)/(x² + 3x − 5) = 2x² − 6x + 1 + (−3/(x² + 3x − 5))",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "2\n3\nf(x) = 3 sin(πx) + 1",
+          "transcription_method": "manual",
+          "visual_note": "A horizontal midline is drawn at approximately y = 1."
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": "0.652 ± 2(0.031)\n(.59, .714) (.59, .71)\nno because 50% falls below the 59%–71% interval.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "110e^(−0.0453 · 0) + 74\n= 110 + 74 = 184°F\n(T(5) − T(0))/5 = −4.5",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "The temp decreases at a rate of 4.5°F per minute on average.\n110e^(−0.0453x) + 74 = 120\n110e^(−0.0453x) = 46\ne^(−0.0453x) = 0.41618\n−0.0453x = −0.87168\nx ≈ 19.24589\nx ≈ 19.2",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "2"
+}

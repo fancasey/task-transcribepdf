@@ -1,0 +1,117 @@
+{
+  "document_type": "student_response",
+  "source": "../1.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "it is an observational\nStudy [crossed out] because She isn’t\ndoing an experiment with a\nControl group and experimentation\ngroup, She isn’t Surveying people\non when they enter the\nStore or buy apples, but is\nJust Collecting data That\nShe observes in the Store",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "f(x) − g(x) = (2x² + 3x − 7) − (2x − 5)\n= 2x² + 3x − 7 − 2x + 5\n= 2x² + x − 2\n2x² + x − 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x³ − 4x² − 9x + 36 = 0\nx²(x − 4) − 9(x − 4) = 0\n(x² − 9)(x − 4) = 0\n(x + 3)(x − 3)(x − 4) = 0\nx + 3 = 0; −3, −3; x = −3\nx − 3 = 0; +3, +3; x = 3\nx − 4 = 0; +4, +4; x = 4\nx = −3\nx = 3\nx = 4",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "(−2 + 5i)²\n(−2 + 5i)(−2 + 5i)\n4 − 10i − 10i + 25i²\n25i² − 20i + 4\n−25 − 20i + 4\n−21 + (−20i)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "Aₜ = A₀(1/2)^(t/h)\nc(t) = 2.7(1/2)^(t/30)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "(0x − 3) + (1x − 3) + (2x − 3) + (3x − 3) + (4x − 3) = 5\n−3 + x − 3 + 2x − 3 + 3x − 3 + 4x − 3 = 5\n10x − 15 = 5\n10x/10 = 20/10\nx = 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "y = 5.381(1.239)^x\ne^(0.214) = 1.239",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "2x² − 6x + 1\n(x² + 3x − 5) ) 2x⁴ + 0x³ − 27x² + 33x − 8\n−2x⁴ + 6x³ + 10x²\n−6x³ − 17x² + 33x\n+6x³ + 18x² + −30x\nx² + 3x − 8\n−x² + −3x + 5\n−3\n2x² − 6x + 1 − 3/(x² + 3x − 5)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "(1/2, 4), 2, (5/2, 4), (3/2, −2), 6\nA = 6/2 = 3\n5/2 − 1/2 = 2\nPeriod of function f is 2\nAmplitude of function f is 3\n2π/B = 2/1\n2π/2 = 2B/2\nB = π\nf(x) = 3 sin(πx) + 1",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": "40\n0.031 · 2 = 0.062\n0.652 − 0.062 = 0.59\n0.652 + 0.062 = 0.714\n0.59 − 0.71\nNo because the lowest the sample proportions go is 0.560 which is still more than half so anything less than 0.5 would be miniscule.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "T(0) = 110e^0 + 74\nT(0) = 110 + 74\nT(0) = 184\n184°F\nT(5) = 110e^(−0.0453(5)) + 74\nT(5) = 161.705\nm = (184 − 161.705)/(0 − 5)\nm = −4.5",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "From the time the tea was poured to 5 minutes after the tea cooled about 4.5°F every minute.\n120 = 110e^(−0.0453(t)) + 74\n46 = 110e^(−0.0453(t))\n23/55 = e^(−0.0453t)\n−0.0453(t) = ln(23/55)\nt = ln(23/55)/(−0.0453)\nt = 19.2\n19.2 minutes",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "1"
+}

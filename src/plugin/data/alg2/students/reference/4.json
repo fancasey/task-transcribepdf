@@ -1,0 +1,117 @@
+{
+  "document_type": "student_response",
+  "source": "../4.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "[Crossed out: Survey because she isn’t just observing]\nObservational, she is observing\nthe sales, not getting involved\nwith anything.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "(2x² + 3x − 7) − (2x − 5)\n2x² + 3x − 7 − 2x + 10\n2x² + x + 3",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x³ − 4x² − 9x + 36 = 0\nx²(x − 4) − 9(x − 4) = 0\n(x² − 9)(x − 4) = 0\n(x + 3)(x − 3)(x − 4) = 0\n{±3, 4, 0}",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "cancels out square root\n[crossed out: (−2 + √(−25))]\n(4 +\n(−2 + √(−25))(−2 + √(−25))\n−10i, −10i\n(4 − 10i − 10i + 25)\n(4 − 20i + 25)\n(29 − 20i)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "2.7(0.5)^(t/30)\n2.7 = Initial rate\n0.5 = half life\n30 yrs = one half life\nt = years",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "x = 2\n(0x − 3) = −3\n(1x − 3) = −1\n(2x − 3) = 1\n(3x − 3) = 3\n(4x − 3) = 5\nx = 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "5.381e^(0.214x)\n5.381(b)^x = 5.381e^(0.214x)\n5.381e^(0.214(1)) = 6.665028\n6.665028/5.381 = 1.2386\n5.381(1.239)^x = 5.381e^(0.214x)\na^(bc) = (a^b)^c\n5.381e^(0.214x) = (5.381e^(0.214))^x",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "[crossed out: illegible]\n2x² − 6x + 1\n(x² + 3x − 5) ) 2x⁴ + 0x³ − 27x² + 33x − 8\n−2x⁴ + 6x³ − 10x²\n−6x³ − 17x² + 33x\n−6x³ − 18x² + 30x\nx² + 3x − 8\n−x² + 3x − 5\n−3\n[crossed out: illegible]",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "π/2, π, 3π/2, 2π\nup 6 down 6\n1 is the midline\n2 is the period\n3 ... something idk no specific units\nf(x) = 3 sin(x) + 1",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": "[crossed out: inv norm(.025, .652, .031) and illegible calculations]\n.652 ± (2)(.031) → (.59, .714)\nno, since every number in the 95% interval is above .5 we have statistical evidence that the majority of parents restrict their childs cell phone privileges",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "[crossed out: illegible]\nT(0) = 110e^(−0.0453(0)) + 74\n184°F\n(161.7051...° − 184°)/(5 − 0) = −4.5°\nT(0) = 184°F\nT(5) = 110e^(−0.0453(5)) + 74\nT(5) = 161.70513...°F",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "On average the tea cooled by 4.5°F each minute in the first five minutes.\n120° = 110e^(−0.0453x) + 74\n−74  −74\n46/110 = (110e^(−0.0453x))/110\n23/55 = e^(−0.045x)\nln(23/55) = ln e^(−0.045x)\nln(23/55) = −0.045x(1)\nln(23/55)/(−0.045) = (−0.045x)/(−0.045)\n19.4 minutes = x",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "4"
+}

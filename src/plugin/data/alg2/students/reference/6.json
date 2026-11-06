@@ -1,0 +1,118 @@
+{
+  "document_type": "student_response",
+  "source": "../6.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "This is a survey\nbecause she is\ntrying to figure\nout what she needs\nto do not what\nis happening\n(observ. & exper.)\nShe needs this\ninformation\nto do something\nnot just study it",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "2x² + 3x − 7 = 0\n− [−2x − 5]\n2x² + 5x − 2 = 0\n(−(5) ± √((5)² − 4(2)(2)))/(2(2))\n(−5 ± √9)/4\n(−5 ± 3)/4\n−5/4 ± 3/4\n−5/4 + 3/4\n−2/4\n−1/2\n−5/4 − 3/4\n−8/4\n−2\n2(−2) − 5 = −9\n2(−2)^2 + 3(−2) − 7 = −5\n2(−1/2)^2 + 3(−1/2) + 7 = 6\n2(−1/2) − 5 = −6\n6 − (−6) = 12\n−5 − (−9) = 4",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x², x², −9, −9\nx²(x − 4) − 9(x − 4)\n(√x² + √9)(x − 4)\n(x − 9)(x + 9)\nx = 9\nx = −9\n[crossed out: illegible]",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "(−2 + √(−25))(−2 + √(−25))\n√(−1) √25\n(−2 + i√25)(−2 + i√25)\n(−25i)(−25i)\n425i²",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "(2.7) ÷ 2^(t/30)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "4 | (ax − 3) = 5\n0 | (0x − 3) = 5\n1 | (1x − 3) = 5\n2 | (2x − 3) = 5\n3 | (3x − 3) = 5\n4 | (4x − 3) = 5\n(10x − 15) = 25\n√(10x − 15) = √25\n10x − 15 = 5\n+15  +15\n10x/10 = 20/10\nx = 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "14.627^(.214x)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "(2x⁴ − 27x² + 33x − 8)/(x² + 3x − 5)\n[crossed out: illegible long division]\n2x² − 3x − 8\n2x⁴ − 0x³ − 27x² + 33x − 8\n−2x⁴ − 6x³ + 10x²\n−6x³ − 17x² + 33x\n+6x³ + 9x² − 15x\n−8x² + 18x − 8\n+8x² + 24x − 40\n32x − 48\n2x² − 3x − 8 + (32x − 48)/(x² + 3x − 5)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "2π\n6π ÷ 3 ÷ 3\n6 ÷ 360 (π/180)\n6 ÷\n2π\nThe amplitude = 3\na\nb\np\nd\nf(x) = 3 sin(2x) + 1",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": "[crossed out: 1.95 = 250(t − 250)]\n(0.62, 0.68)\n0.652 + 0.031 = 0.683\n0.652 − 0.031 = 0.621\nThe simulation results does not support the superintedent concern because I compared 50% to the interval.",
+          "transcription_method": "manual",
+          "visual_note": "Two vertical lines are drawn on the histogram near 0.620 and 0.680."
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "184°\n(0, 184)\n(5, 161.71)\n(184 − 161.71)/(0 − 5) = −4.5°",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "−4.5° per minute\n120 = 110e^(−.0453x) + 74\n46 = 110e^(−.0453x)\n.418 = e^(−.0453x)\nln(.418) = −.0453x ln(e)\nln(.418)/.0453 = −.0453x\n19.3 mins",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "6"
+}

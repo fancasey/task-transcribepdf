@@ -1,0 +1,117 @@
+{
+  "document_type": "student_response",
+  "source": "../3.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "This study is an observational study\nbecause she is not changing any\nvariables.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "2x² + 3x − 7 − 2x − 5\n2x² + 1x − 12",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x = (−b ± √(b² − 4ac))/(2a)\na = 1, b = −4\nx, −4; x², −9\nx³, −4x²; −9x, +36\n(x − 4)(x² − 9)\n(x − 4)(x − 3)(x + 3)\nx + 4  x − 3  x + 3\n{−4, +3, −3}",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "(−2 + √(−25))(−2 + √(−25))\n4 − 2√(−25) − 2√(−25) − 25\n−4√(−25) − 21\n−4i(5) − 21\n−21 − 20i\n21 + 20i",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "y = 2.7(1/2)^(x/30)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "(0x − 3) = 5\n(1x − 3) = 5\n(2x − 3) = 5\n(3x − 3) = 5\n(4x − 3) = 5\n+\n(10x − 15) = 25\n+15  +15\n10x = 40\n10\nx = 4",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "y = 5.381(e)^(0.214x)\ny = 14.627^(0.214x)\ny = 1.775^x\ny = 5.381(1.239)^x",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "2x² − 6x + 1\n(x² + 3x − 5) ) 2x⁴ + 0x³ − 27x² + 33x − 8\n+ −2x⁴ + 6x³ + 10x²\n−6x³ − 17x² + 33x\n+ 6x³ + 18x² + 30x\nx² + 63x − 8\n+ −x² − 3x + 5\n60x − 3\n2x² − 6x + 1 + (60x − 3)/(x² + 3x − 5)\n[crossed out: illegible]",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "P = 2.5\nA = 3\nA = (max − min)/2\nA = (4 − −2)/2 = 3\nf(x) = 3 sin(0.8πx) + 1\nD = (max + min)/2 = (4 + −2)/2 = 1\nA = 3\nD = 1\nB = 2π/2.5 = .8π",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": ".59 to .71\nNo. The plausible outcomes are all more than 50%, so it would be statistically significant for less than 1/2 to restrict.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "[crossed out: 74°F] 184°F\n(161.705 − 184)/(5 − 0)\n−22.295/5\n−4.5",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "4.5°F less every minute the cup is cooled\n120 = 110e^(−.0453x) + 74\nln(46/110) = −.0453x\n−.0453\n19.2 minutes",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "3"
+}

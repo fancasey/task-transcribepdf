@@ -1,0 +1,117 @@
+{
+  "document_type": "student_response",
+  "source": "../5.pdf",
+  "page_count": 12,
+  "questions": {
+    "25": {
+      "response_segments": [
+        {
+          "source_page": 1,
+          "text": "Experiment because they are collecting\ndata of a certain item for each day\nfor three consecutive weeks so it\nis an experiment cause you are trying\nto find something out by using data\nover a certain period of time.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "26": {
+      "response_segments": [
+        {
+          "source_page": 2,
+          "text": "2x² + 3x − 7\n2x: 4x³, 6x², −14x\n−5: 10x², −15x, 35\n4x³ + 6x² − 14x + 10x² − 15x + 35\n4x³ + 16x²",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "27": {
+      "response_segments": [
+        {
+          "source_page": 3,
+          "text": "x³ − 4x²; −9x + 36\nx²(x − 4); −9(x − 4)\nx²(x + 2)(x − 2); −9(x + 2)(x − 2)\n(x² − 9)(x + 2)(x − 2)(x + 2)(x − 2)\n(x + 3)(x − 3)(x + 2)(x − 2)(x + 2)(x − 2)\nx − 2 =; +2; [crossed out: x = 2]\nx − 3 =; +3; x = 3\nx + 2 =; −2; [crossed out: x = −2]\nx + 3 = 0; −3; x = −3",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "29": {
+      "response_segments": [
+        {
+          "source_page": 4,
+          "text": "a + bi\n(−2 + √(−25))²\n−2 + 5i²\n[crossed out: illegible]\n−2 + 25i",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "30": {
+      "response_segments": [
+        {
+          "source_page": 5,
+          "text": "[crossed out: illegible]\n137 = 30(1/2)^(t/30)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "31": {
+      "response_segments": [
+        {
+          "source_page": 6,
+          "text": "[crossed out: 4(0x − 3) = 5; (−12) = 5]\n(4x − 3) = 5\n+3  +3\n4x/4 = 8/4\nx = 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "32": {
+      "response_segments": [
+        {
+          "source_page": 7,
+          "text": "f(x) = 5.381(1.2386)^x\nf(x) = 6.665^x",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "33": {
+      "response_segments": [
+        {
+          "source_page": 8,
+          "text": "2x² − 6x + 1 + (−6x − 3)/(2x⁴ − 27x² + 33x − 8)\n(x² + 3x − 5) ) 2x⁴ − 27x² + 33x − 8\n−(2x⁴ + 6x³ − 10x²)\n−6x³ − 17x² + 33x − 8\n−(−6x³ − 18x² + 30x)\nx² − 3x − 8\n−(x² + 3x − 5)\n−6x − 3\n2x² − 6x + 1 + (−6x − 3)/(2x⁴ − 27x² + 33x − 8)",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "34": {
+      "response_segments": [
+        {
+          "source_page": 9,
+          "text": "waves\nperiod = 2π/B\nPeriod = 2\n2/1 = 2π/B\n2x/2 = 2π/2\nx = π\nB\n4\nf(x) = 4 sin πx + 2",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "35": {
+      "response_segments": [
+        {
+          "source_page": 10,
+          "text": "(.59, .71)\n0.652 ± 2(0.031)\n0.652 ± .062\n0.652 + .062\n.714\n0.652 − .062\n.59\nYes because the interval of 95% is less than half.",
+          "transcription_method": "manual"
+        }
+      ]
+    },
+    "36": {
+      "response_segments": [
+        {
+          "source_page": 11,
+          "text": "T(0) = 110e^(−0.0453(0)) + 74\nT(0) = 110e^(0) + 74\nT(0) = 110(1) + 74\nT(0) = 184°\nT(5) ≈ 161.7\n(184 − 161.7)/(−5) = 4.5",
+          "transcription_method": "manual"
+        },
+        {
+          "source_page": 12,
+          "text": "The tea cooled by about 4.5°\n120 = 110e^(−0.0453x) + 74\n−74  −74\n46/110 = (110e^(−0.0453x))/110\nln(46/110) = ln e^(−0.0453x)\nln(46/110)/(−0.0453) = (−0.0453x)/(−0.0453)\n19.2 ≈ x",
+          "transcription_method": "manual"
+        }
+      ]
+    }
+  },
+  "supplementary_info": {
+    "transcription_notes": [
+      "Response pages were reviewed against the PDF. [illegible] marks text that could not be read confidently. Graph descriptions are kept separately from transcribed text."
+    ]
+  },
+  "student_id": "5"
+}
