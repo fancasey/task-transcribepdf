@@ -1,6 +1,6 @@
 """NanoAgent's deterministic verification entry points."""
 
-from slimconfig import plain_output
+from dataclasses import asdict
 
 from contract import MAX_PAGES_PER_READ, OUTPUT_PATH, Task, Tool
 
@@ -31,7 +31,7 @@ def verify_output(tool, input_value, output_value, workspace):
         saved = load_saved(workspace, OUTPUT_PATH)
     except (OSError, ValueError) as error:
         return result(False, str(error))
-    valid = saved == plain_output(input_value)
+    valid = saved == asdict(input_value)
     return result(valid, "Questions saved" if valid else "Saved questions differ from tool input")
 
 
