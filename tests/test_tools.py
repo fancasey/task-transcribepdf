@@ -28,7 +28,7 @@ def test_every_pdf_page_can_be_read(number, tmp_path):
     assert list(tmp_path.iterdir()) == []
 
 
-@pytest.mark.parametrize("pages", [[1], [1, 2], [1, 14, 28], [26, 27, 28]])
+@pytest.mark.parametrize("pages", [[1], [1, 2], [1, 2, 3, 4, 5], [1, 14, 28], [26, 27, 28]])
 def test_valid_batches_preserve_individual_page_text(pages, tmp_path):
     request = ReadInput(pages)
     assert verify_input("read_pdf", request)["valid"]
@@ -38,7 +38,7 @@ def test_valid_batches_preserve_individual_page_text(pages, tmp_path):
     ]
 
 
-@pytest.mark.parametrize("pages", [[], [0], [-1], [1, 1], [2, 1], [1, 2, 3, 4]])
+@pytest.mark.parametrize("pages", [[], [0], [-1], [1, 1], [2, 1], [1, 2, 3, 4, 5, 6]])
 def test_input_verifier_rejects_bad_page_requests(pages):
     found = verify_input("read_pdf", ReadInput(pages))
     assert found["valid"] is False
@@ -53,7 +53,7 @@ def test_output_verifier_rejects_missing_extra_wrong_or_out_of_range_pages(tmp_p
 
 @pytest.fixture
 def submission():
-    return SaveInput({"1": Question("π ≥ 2 — café\nSecond line", []), "34": Question("Shared", ["Part one"])})
+    return SaveInput(1, 5, {"1": Question("π ≥ 2 — café\nSecond line", [], [2]), "2": Question("Shared", ["Part one"], [2])})
 
 
 def test_save_creates_nested_workspace_and_round_trips_unicode(tmp_path, submission):
@@ -70,25 +70,24 @@ def test_save_creates_nested_workspace_and_round_trips_unicode(tmp_path, submiss
 
 def test_second_save_replaces_previous_content(tmp_path, submission):
     save_transcription(submission, tmp_path)
-    submission.questions.pop("34")
+    submission.questions.pop("2")
     save_transcription(submission, tmp_path)
     assert json.loads((tmp_path / OUTPUT_PATH).read_text()) == plain_output(submission)
 
 
 @pytest.mark.parametrize("key", ["", "a", "../1", "1.0", "-1", "１", "١", "²", " 1"])
 def test_save_and_input_verifier_reject_non_ascii_decimal_ids(tmp_path, key):
-    value = SaveInput({key: Question("Text", [])})
+    value = SaveInput(1, 5, {key: Question("Text", [], [2])})
     assert not verify_input("save_transcription", value)["valid"]
     with pytest.raises(ValueError, match="numeric question IDs"):
         save_transcription(value, tmp_path)
     assert list(tmp_path.iterdir()) == []
 
 
-def test_empty_submission_is_rejected(tmp_path):
-    value = SaveInput({})
-    assert not verify_input("save_transcription", value)["valid"]
-    with pytest.raises(ValueError):
-        save_transcription(value, tmp_path)
+def test_empty_submission_is_accepted(tmp_path):
+    value = SaveInput(1, 5, {})
+    assert verify_input("save_transcription", value)["valid"]
+    save_transcription(value, tmp_path)
 
 
 @pytest.mark.parametrize("link_parent", [False, True])
@@ -127,3 +126,13 @@ def test_output_verifier_detects_saved_content_changes(tmp_path, submission):
     output = save_transcription(submission, tmp_path)
     submission.questions["1"].prompt = "Different"
     assert not verify_output("save_transcription", submission, output, tmp_path)["valid"]
+
+
+@pytest.mark.parametrize("start,end,pages", [(18, 22, [22, 23]), (23, 27, [23]), (1, 6, [2])])
+def test_save_refuses_cut_off_questions_and_oversized_intervals(tmp_path, start, end, pages):
+    key = "1" if start == 1 else "36"
+    value = SaveInput(start, end, {key: Question("Partial", [], pages)})
+    assert not verify_input("save_transcription", value)["valid"]
+    with pytest.raises(ValueError):
+        save_transcription(value, tmp_path)
+    assert not (tmp_path / OUTPUT_PATH).exists()

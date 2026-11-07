@@ -2,7 +2,7 @@
 
 from dataclasses import asdict
 
-from contract import MAX_PAGES_PER_READ, OUTPUT_PATH, Task, Tool
+from contract import MAX_PAGES_PER_READ, OUTPUT_PATH, Task, Tool, validate_save
 
 from . import transcribe
 from .checks import load_saved, result
@@ -12,9 +12,12 @@ def verify_input(tool, value):
     if Tool(tool) is Tool.READ_PDF:
         pages = value.pages
         if not 1 <= len(pages) <= MAX_PAGES_PER_READ or pages != sorted(set(pages)) or pages[0] < 1:
-            return result(False, "Request one to three distinct positive pages in increasing order")
-    elif not value.questions or any(not key.isascii() or not key.isdecimal() for key in value.questions):
-        return result(False, "questions must map numeric question IDs to question records")
+            return result(False, "Request one to five distinct positive pages in increasing order")
+    else:
+        try:
+            validate_save(value)
+        except ValueError as error:
+            return result(False, str(error))
     return result(True, "Valid request")
 
 
@@ -37,4 +40,4 @@ def verify_output(tool, input_value, output_value, workspace):
 
 def verify_task(task, arguments, output, reference, workspace):
     Task(task)
-    return transcribe.verify_task(output, workspace)
+    return transcribe.verify_task(output, workspace, arguments)

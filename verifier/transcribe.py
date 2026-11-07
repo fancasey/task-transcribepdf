@@ -2,7 +2,7 @@
 
 import re
 
-from contract import OUTPUT_PATH
+from contract import OUTPUT_PATH, QUESTION_PAGES, validate_interval
 
 from .checks import load_saved, result
 
@@ -64,7 +64,13 @@ def words(value):
     return " " + " ".join(re.findall(r"\w+", value.casefold())) + " "
 
 
-def verify_task(output, workspace):
+
+
+def verify_task(output, workspace, arguments):
+    try:
+        validate_interval(arguments.start_page, arguments.end_page)
+    except ValueError as error:
+        return result(False, str(error))
     if output.path != OUTPUT_PATH:
         return result(False, f"Return the saved path {OUTPUT_PATH}")
     try:
@@ -74,8 +80,11 @@ def verify_task(output, workspace):
     if not isinstance(saved, dict) or not isinstance(saved.get("questions"), dict):
         return result(False, "Saved JSON must contain a questions object")
 
+    if (saved.get("start_page"), saved.get("end_page")) != (arguments.start_page, arguments.end_page):
+        return result(False, "Saved page interval differs from the requested interval")
     actual = saved["questions"]
-    expected = {str(number): anchor for number, anchor in enumerate(PROMPT_ANCHORS, 1)}
+    expected = {str(number): anchor for number, anchor in enumerate(PROMPT_ANCHORS, 1)
+                if all(arguments.start_page <= page <= arguments.end_page for page in QUESTION_PAGES[str(number)])}
     missing = [key for key in expected if key not in actual]
     unexpected = sorted(actual.keys() - expected.keys())
     invalid = []
@@ -87,6 +96,7 @@ def verify_task(output, workspace):
         question = actual[key]
         if (
             not isinstance(question, dict)
+            or question.get("pages") != QUESTION_PAGES[key]
             or not isinstance(question.get("prompt"), str)
             or not question["prompt"].strip()
             or not isinstance(question.get("subquestions"), list)
@@ -105,8 +115,8 @@ def verify_task(output, workspace):
                 text_warnings.append(f"{key}.{index}")
 
     valid = not (missing or unexpected or invalid or subquestion_counts)
-    phrase_count = len(expected) + sum(map(len, SUBQUESTION_ANCHORS.values()))
-    score = 1 - TEXT_WEIGHT * len(text_warnings) / phrase_count if valid else 0
+    phrase_count = len(expected) + sum(len(SUBQUESTION_ANCHORS.get(key, ())) for key in expected)
+    score = 1 - TEXT_WEIGHT * len(text_warnings) / max(1, phrase_count) if valid else 0
     return result(
         valid,
         "Question and subquestion counts match" if valid else "Exam question structure differs from the reference",

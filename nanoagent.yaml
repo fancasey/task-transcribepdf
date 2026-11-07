@@ -1,7 +1,7 @@
 _ > nanoagent.plugin.v0001.ManifestConfig:
 id: transcribe-exams
 name: Organize Exam Questions
-version: 0.9.0
+version: 0.10.0
 status: ready
 spec: nanoagent.plugin/v0001
 
@@ -17,7 +17,7 @@ permissions > nanoagent.plugin.v0001.PermissionsConfig:
 
 tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
   read_pdf:
-    description: Extract embedded text from up to three pages of the original Algebra II Regents exam PDF
+    description: Extract embedded text from up to five pages of the original Algebra II Regents exam PDF
   save_transcription:
     description: Save exam questions and their subquestions as JSON
 
@@ -28,15 +28,17 @@ tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
     tools: [read_pdf, save_transcription]
     reference: null
     instructions: |-
-      Read the bundled Algebra II Regents exam in increasing page order, up to three pages per call.
-      Page numbers are one-based. Read until all four exam parts are complete.
-      Use the printed question numbers as string keys. Each record has a prompt string and a
-      subquestions list of strings. Preserve the wording and include the shared setup and any
-      multiple-choice options in prompt. Choices are not subquestions.
-      Put separately printed response prompts for multipart questions in subquestions, in order.
-      For single prompts, keep their explanation requests and answer-format instructions in prompt
-      and use an empty subquestions list. Join continued questions across pages under the same number.
-      Skip booklet instructions, headers, footers, blank work space, and reference sheets.
-      For diagrams and tables, retain relevant text available in the extraction.
-      Preserve math as extracted when its notation is unclear. Do not solve or reconstruct missing
-      visual information. Save the complete questions object using save_transcription and return its path.
+      Transcribe only the inclusive start_page through end_page interval supplied by the user.
+      Reject intervals outside pages 1-28 or longer than five pages. Do not read outside this interval.
+      Read the selected pages in increasing order, up to five pages per call.
+      Use printed question numbers as string keys. Each record has prompt, subquestions, and pages.
+      pages lists every one-based PDF page containing the question, including continuations.
+      Include only complete questions: omit any question whose beginning or continuation falls
+      outside the interval. In particular, question 36 requires both pages 22 and 23.
+      Keep shared setup, options, and single-response instructions in prompt. Choices are not
+      subquestions. Put separately printed response prompts in subquestions in printed order.
+      Join continuations within the interval. Skip booklet instructions, headers, footers, blank
+      work space, and reference sheets. Preserve extracted math and relevant diagram/table text;
+      do not solve or reconstruct missing visual information.
+      Save start_page, end_page, and questions using save_transcription; an empty questions object
+      is correct for intervals with no complete questions. Return the saved path.

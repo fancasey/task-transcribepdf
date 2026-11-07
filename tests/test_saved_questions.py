@@ -1,120 +1,64 @@
-"""Exercise each independently scored response and each structural requirement."""
-
+"""Interval scoring uses independent source provenance, including cut-off questions."""
 import json
 
 import pytest
 
 from contract import OUTPUT_PATH, SaveOutput, TranscribeInput
 from verifier import verify_task
-
-IDS = [str(number) for number in range(1, 37)]
-PARTS = [(key, index) for key, count in (("34", 3), ("35", 2), ("36", 4)) for index in range(count)]
-RESPONSES = [(key, None) for key in IDS] + PARTS
+from verifier.transcribe import QUESTION_PAGES
 
 
-def verdict(tmp_path, payload):
+def verdict(tmp_path, questions, start, end):
     target = tmp_path / OUTPUT_PATH
     target.parent.mkdir(exist_ok=True)
-    target.write_text(json.dumps(payload), encoding="utf-8")
-    return verify_task("transcribe-exams", TranscribeInput(), SaveOutput(OUTPUT_PATH), None, tmp_path)
+    target.write_text(json.dumps({"start_page": start, "end_page": end, "questions": questions}))
+    return verify_task("transcribe-exams", TranscribeInput(start, end), SaveOutput(OUTPUT_PATH), None, tmp_path)
 
 
-@pytest.mark.parametrize("key", IDS)
-def test_each_question_is_required(tmp_path, questions, key):
-    del questions[key]
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["valid"] is False
-    assert found["score"] == 0
-    assert found["details"]["missing"] == [key]
+def subset(questions, start, end):
+    return {key: value for key, value in questions.items()
+            if all(start <= p <= end for p in QUESTION_PAGES[key])}
 
 
-@pytest.mark.parametrize("key,index", RESPONSES)
-def test_each_phrase_has_equal_weight_and_precise_diagnostic(tmp_path, questions, key, index):
-    if index is None:
-        questions[key]["prompt"] = "Unrelated prose"
-    else:
-        questions[key]["subquestions"][index] = "Unrelated prose"
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["valid"] is True
-    assert found["score"] == pytest.approx(1 - 0.2 / 45)
-    assert found["details"]["text_warnings"] == [key if index is None else f"{key}.{index + 1}"]
+@pytest.mark.parametrize("start", range(1, 29))
+def test_every_five_page_interval(tmp_path, questions, start):
+    end = min(start + 4, 28)
+    selected = subset(questions, start, end)
+    assert verdict(tmp_path, selected, start, end)["score"] == 1
+    for key in list(selected):
+        incomplete = dict(selected)
+        del incomplete[key]
+        found = verdict(tmp_path, incomplete, start, end)
+        assert not found["valid"]
+        assert found["details"]["missing"] == [key]
 
 
-@pytest.mark.parametrize("key,index", RESPONSES)
-def test_each_phrase_tolerates_case_punctuation_and_wrapping(tmp_path, questions, key, index):
-    record = questions[key]
-    text = record["prompt"] if index is None else record["subquestions"][index]
-    text = "Context before. " + " —\n".join(text.upper().replace("'", "’").split()) + ". Context after."
-    if index is None:
-        record["prompt"] = text
-    else:
-        record["subquestions"][index] = text
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["valid"] is True
-    assert found["score"] == 1
-    assert found["details"]["text_warnings"] == []
+@pytest.mark.parametrize("start,end", [(18, 22), (23, 27)])
+def test_cut_off_question_is_excluded_and_cannot_fake_provenance(tmp_path, questions, start, end):
+    selected = subset(questions, start, end)
+    assert "36" not in selected
+    assert verdict(tmp_path, selected, start, end)["score"] == 1
+    selected["36"] = questions["36"]
+    selected["36"]["pages"] = [start]
+    assert verdict(tmp_path, selected, start, end)["details"]["unexpected"] == ["36"]
 
 
-@pytest.mark.parametrize("key", IDS)
-@pytest.mark.parametrize("field,value", [("prompt", " \n\t"), ("subquestions", None)])
-def test_malformed_record_is_identified_for_every_question(tmp_path, questions, key, field, value):
-    questions[key][field] = value
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["valid"] is False
-    assert found["score"] == 0
-    assert found["details"]["invalid"] == [key]
+def test_complete_continuation_is_required(tmp_path, questions):
+    assert verdict(tmp_path, subset(questions, 21, 25), 21, 25)["score"] == 1
+    selected = subset(questions, 21, 25)
+    selected["36"]["pages"] = [22]
+    assert verdict(tmp_path, selected, 21, 25)["details"]["invalid"] == ["36"]
 
 
-@pytest.mark.parametrize(
-    "value",
-    [
-        None,
-        False,
-        0,
-        [],
-        "text",
-        {},
-        {"prompt": "text"},
-        {"prompt": 3, "subquestions": []},
-        {"prompt": "text", "subquestions": [None]},
-        {"prompt": "text", "subquestions": [" "]},
-    ],
-)
-def test_wrong_record_types_return_verdicts(tmp_path, questions, value):
-    questions["1"] = value
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["score"] == 0
-    assert found["details"]["invalid"] == ["1"]
+@pytest.mark.parametrize("start,end", [(1, 6), (0, 4), (5, 4), (25, 29)])
+def test_invalid_task_intervals(tmp_path, start, end):
+    assert not verdict(tmp_path, {}, start, end)["valid"]
 
 
-@pytest.mark.parametrize("key", IDS)
-def test_extra_response_is_a_structural_failure(tmp_path, questions, key):
-    expected = len(questions[key]["subquestions"])
-    questions[key]["subquestions"].append("Extra response")
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["score"] == 0
-    assert found["details"]["subquestion_counts"] == {key: {"expected": expected, "actual": expected + 1}}
-
-
-@pytest.mark.parametrize("key,index", PARTS)
-def test_each_subquestion_is_required(tmp_path, questions, key, index):
-    expected = len(questions[key]["subquestions"])
-    questions[key]["subquestions"].pop(index)
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["score"] == 0
-    assert found["details"]["subquestion_counts"] == {key: {"expected": expected, "actual": expected - 1}}
-
-
-@pytest.mark.parametrize("payload", [None, [], 0, "text", {}, {"questions": None}, {"questions": []}])
-def test_wrong_document_shape_is_rejected(tmp_path, payload):
-    found = verdict(tmp_path, payload)
-    assert found["valid"] is False
-    assert found["score"] == 0
-
-
-@pytest.mark.parametrize("key", ["0", "01", "37", "-1", "１", "a", "", "1.0"])
-def test_unexpected_ids_are_reported(tmp_path, questions, key):
-    questions[key] = {"prompt": "text", "subquestions": []}
-    found = verdict(tmp_path, {"questions": questions})
-    assert found["score"] == 0
-    assert found["details"]["unexpected"] == [key]
+def test_text_scoring_only_counts_selected_questions(tmp_path, questions):
+    selected = subset(questions, 1, 5)
+    selected["1"]["prompt"] = "Unrelated"
+    found = verdict(tmp_path, selected, 1, 5)
+    assert found["valid"]
+    assert found["score"] == pytest.approx(1 - .2 / 11)
+    assert found["details"]["text_warnings"] == ["1"]

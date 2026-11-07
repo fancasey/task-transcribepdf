@@ -8,7 +8,17 @@ from tempfile import NamedTemporaryFile
 import pypdfium2 as pdfium
 from slimconfig import plain_output
 
-from contract import MAX_PAGES_PER_READ, OUTPUT_PATH, SOURCE, PdfPage, ReadInput, ReadOutput, SaveInput, SaveOutput
+from contract import (
+    MAX_PAGES_PER_READ,
+    OUTPUT_PATH,
+    SOURCE,
+    PdfPage,
+    ReadInput,
+    ReadOutput,
+    SaveInput,
+    SaveOutput,
+    validate_save,
+)
 
 SAMPLE = Path(__file__).parent / "data" / SOURCE
 
@@ -16,7 +26,7 @@ SAMPLE = Path(__file__).parent / "data" / SOURCE
 def read_pdf(value: ReadInput, workspace: Path) -> ReadOutput:
     pages = value.pages
     if not 1 <= len(pages) <= MAX_PAGES_PER_READ or pages != sorted(set(pages)):
-        raise ValueError("Request one to three distinct pages in increasing order")
+        raise ValueError("Request one to five distinct pages in increasing order")
     with pdfium.PdfDocument(SAMPLE) as pdf:
         if pages[0] < 1 or pages[-1] > len(pdf):
             raise ValueError(f"Page numbers must be between 1 and {len(pdf)}")
@@ -28,8 +38,7 @@ def read_pdf(value: ReadInput, workspace: Path) -> ReadOutput:
 
 
 def save_transcription(value: SaveInput, workspace: Path) -> SaveOutput:
-    if not value.questions or any(not key.isascii() or not key.isdecimal() for key in value.questions):
-        raise ValueError("questions must map numeric question IDs to question records")
+    validate_save(value)
     target = workspace.resolve() / OUTPUT_PATH
     if target.resolve() != target:
         raise ValueError("Output path must not contain a symbolic link")

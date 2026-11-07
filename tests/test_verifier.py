@@ -11,7 +11,7 @@ from plugin.transcribe import read_pdf
 
 
 def test_mcp_reads_exam_and_saves_organized_questions(tmp_path):
-    expected = {"questions": {"1": {"prompt": "The expression", "subquestions": []}}}
+    expected = {"start_page": 1, "end_page": 5, "questions": {"1": {"prompt": "The expression", "subquestions": [], "pages": [2]}}}
 
     async def call():
         parameters = StdioServerParameters(
@@ -34,10 +34,10 @@ def test_mcp_reads_exam_and_saves_organized_questions(tmp_path):
 
     asyncio.run(call())
     assert json.loads((tmp_path / OUTPUT_PATH).read_text(encoding="utf-8")) == expected
-    assert not vars(TranscribeInput())
+    assert vars(TranscribeInput(1, 5)) == {"start_page": 1, "end_page": 5}
 
 
-@pytest.mark.parametrize("pages", [[], [0], [1, 1], [2, 1], [1, 2, 3, 4], [29]])
+@pytest.mark.parametrize("pages", [[], [0], [1, 1], [2, 1], [1, 2, 3, 4, 5, 6], [29]])
 def test_reader_rejects_invalid_batches(tmp_path, pages):
     with pytest.raises(ValueError):
         read_pdf(ReadInput(pages), tmp_path)
@@ -63,7 +63,7 @@ def test_mcp_advertises_contracts_and_recovers_after_invalid_calls(tmp_path):
                 ("read_pdf", {"pages": [29]}),
                 ("read_pdf", {"pages": [2, 1]}),
                 ("read_pdf", {"pages": [1, 1]}),
-                ("read_pdf", {"pages": [1, 2, 3, 4]}),
+                ("read_pdf", {"pages": [1, 2, 3, 4, 5, 6]}),
                 ("save_transcription", {"questions": {}}),
                 ("save_transcription", {"questions": {"../1": {"prompt": "x", "subquestions": []}}}),
                 ("save_transcription", {"questions": {"1": {"prompt": "x"}}}),
