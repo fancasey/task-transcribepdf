@@ -56,6 +56,7 @@ class SaveInput(Output):
 @dataclass
 class SaveOutput(Output):
     path: Annotated[str, "Saved JSON path relative to the workspace"]
+    transcription: Annotated[SaveInput, "Complete transcription, identical to the saved JSON"]
 
 
 @dataclass

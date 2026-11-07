@@ -1,7 +1,7 @@
 _ > nanoagent.plugin.v0001.ManifestConfig:
 id: transcribe-exams
 name: Organize Exam Questions
-version: 0.10.3
+version: 0.10.4
 status: ready
 spec: nanoagent.plugin/v0001
 
@@ -19,7 +19,7 @@ tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
   read_pdf:
     description: Read embedded text from one to five distinct, increasing, one-based pages of the bundled 28-page Algebra II Regents exam
   save_transcription:
-    description: Save the selected page interval and complete questions, subquestions, and source pages to transcriptions/questions.json, replacing the previous save
+    description: Save the selected page interval and complete questions, subquestions, and source pages to transcriptions/questions.json, replacing the previous save, and return the full transcription with its path
 
 tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
   transcribe-exams:
@@ -49,4 +49,5 @@ tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
       transcription; preserve the available text and move on. Check grouping, required fields,
       and source pages once, then save.
       Save start_page, end_page, and questions using save_transcription; an empty questions object
-      is correct for intervals with no complete questions. Return the saved path.
+      is correct for intervals with no complete questions. Return both the saved path and the full
+      transcription from save_transcription as the task result so the user can read it directly.

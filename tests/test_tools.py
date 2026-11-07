@@ -60,6 +60,7 @@ def test_save_creates_nested_workspace_and_round_trips_unicode(tmp_path, submiss
     workspace = tmp_path / "new" / "workspace"
     output = save_transcription(submission, workspace)
     assert output.path == OUTPUT_PATH
+    assert plain_output(output.transcription) == plain_output(submission)
     target = workspace / output.path
     assert json.loads(target.read_text()) == plain_output(submission)
     assert "π" in target.read_text()
@@ -136,3 +137,15 @@ def test_save_refuses_cut_off_questions_and_oversized_intervals(tmp_path, start,
     with pytest.raises(ValueError):
         save_transcription(value, tmp_path)
     assert not (tmp_path / OUTPUT_PATH).exists()
+
+
+def test_verifiers_reject_result_that_differs_from_saved_transcription(tmp_path, submission):
+    from contract import TranscribeInput
+    from verifier import verify_task
+
+    output = save_transcription(submission, tmp_path)
+    output.transcription = SaveInput(1, 5, {})
+    assert not verify_output("save_transcription", submission, output, tmp_path)["valid"]
+    verdict = verify_task("transcribe-exams", TranscribeInput(1, 5), output, None, tmp_path)
+    assert not verdict["valid"]
+    assert "Returned transcription" in verdict["message"]

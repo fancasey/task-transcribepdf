@@ -1,6 +1,7 @@
 """Check exam question structure and spot-check the extracted prose."""
 
 import re
+from dataclasses import asdict
 
 from contract import OUTPUT_PATH, QUESTION_PAGES
 
@@ -83,6 +84,8 @@ def verify_task(output, workspace, arguments):
 
     if (saved.get("start_page"), saved.get("end_page")) != (arguments.start_page, arguments.end_page):
         return result(False, "Saved page interval differs from the requested interval")
+    if asdict(output.transcription) != saved:
+        return result(False, "Returned transcription differs from saved JSON")
     actual = saved["questions"]
     expected = {str(number): anchor for number, anchor in enumerate(PROMPT_ANCHORS, 1)
                 if all(arguments.start_page <= page <= arguments.end_page for page in QUESTION_PAGES[str(number)])}

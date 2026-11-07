@@ -12,13 +12,13 @@ network requests.
 | Tool | Does | Code |
 |---|---|---|
 | `read_pdf` | Returns the exam's page count and embedded text for one to five distinct, increasing, one-based page numbers. The bundled exam has 28 pages; page 24 has no embedded text and returns an empty string | `src/plugin/transcribe.py` |
-| `save_transcription` | Writes the selected interval and its complete questions as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path | `src/plugin/transcribe.py` |
+| `save_transcription` | Writes the selected interval and its complete questions as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path and full transcription | `src/plugin/transcribe.py` |
 
 ### Tasks
 
 | Task | Does | Runner |
 |---|---|---|
-| `transcribe-exams` | Reads the exam, groups questions and their separate response prompts, saves the selected interval, and returns its path. Takes `{"start_page": 1, "end_page": 5}` as input | `agent`, with `read_pdf` and `save_transcription` |
+| `transcribe-exams` | Reads the exam, groups questions and their separate response prompts, saves the selected interval, and returns its path and full transcription. Takes `{"start_page": 1, "end_page": 5}` as input | `agent`, with `read_pdf` and `save_transcription` |
 
 ### The task
 
@@ -51,7 +51,9 @@ The saved format is illustrated below (a partial example):
 }
 ```
 
-The task returns `{"path": "transcriptions/questions.json"}`. Diagrams, tables,
+The task returns `{"path": "transcriptions/questions.json", "transcription": {...}}`,
+where `transcription` contains the full saved JSON shown above, including the page
+interval and questions, so it can be read directly in the result. Diagrams, tables,
 and math may lose information during text extraction: the agent preserves
 available text without solving questions or reconstructing missing visuals.
 

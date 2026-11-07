@@ -30,7 +30,7 @@ def test_mcp_reads_exam_and_saves_organized_questions(tmp_path):
 
             result = await session.call_tool("save_transcription", expected)
             assert not result.isError
-            assert result.structuredContent == {"path": OUTPUT_PATH}
+            assert result.structuredContent == {"path": OUTPUT_PATH, "transcription": expected}
 
     asyncio.run(call())
     assert json.loads((tmp_path / OUTPUT_PATH).read_text(encoding="utf-8")) == expected

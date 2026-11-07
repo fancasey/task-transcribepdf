@@ -35,6 +35,8 @@ def verify_output(tool, input_value, output_value, workspace):
         saved = load_saved(workspace, OUTPUT_PATH)
     except (OSError, ValueError) as error:
         return result(False, str(error))
+    if asdict(output_value.transcription) != saved:
+        return result(False, "Returned transcription differs from saved JSON")
     valid = saved == asdict(input_value)
     return result(valid, "Questions saved" if valid else "Saved questions differ from tool input")
 

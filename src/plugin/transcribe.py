@@ -52,4 +52,4 @@ def save_transcription(value: SaveInput, workspace: Path) -> SaveOutput:
             temp_path.replace(target)
         finally:
             temp_path.unlink(missing_ok=True)
-    return SaveOutput(OUTPUT_PATH)
+    return SaveOutput(OUTPUT_PATH, value)

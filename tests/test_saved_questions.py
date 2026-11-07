@@ -3,7 +3,7 @@ import json
 
 import pytest
 
-from contract import OUTPUT_PATH, SaveOutput, TranscribeInput
+from contract import OUTPUT_PATH, Question, SaveInput, SaveOutput, TranscribeInput
 from verifier import verify_task
 from verifier.transcribe import QUESTION_PAGES
 
@@ -12,7 +12,9 @@ def verdict(tmp_path, questions, start, end):
     target = tmp_path / OUTPUT_PATH
     target.parent.mkdir(exist_ok=True)
     target.write_text(json.dumps({"start_page": start, "end_page": end, "questions": questions}))
-    return verify_task("transcribe-exams", TranscribeInput(start, end), SaveOutput(OUTPUT_PATH), None, tmp_path)
+    transcription = SaveInput(start, end, {key: Question(**value) for key, value in questions.items()})
+    return verify_task("transcribe-exams", TranscribeInput(start, end),
+                       SaveOutput(OUTPUT_PATH, transcription), None, tmp_path)
 
 
 def subset(questions, start, end):
