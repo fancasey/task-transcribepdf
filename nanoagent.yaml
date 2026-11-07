@@ -1,7 +1,7 @@
 _ > nanoagent.plugin.v0001.ManifestConfig:
 id: transcribe-exams
 name: Organize Exam Questions
-version: 0.10.1
+version: 0.10.2
 status: ready
 spec: nanoagent.plugin/v0001
 
@@ -38,7 +38,15 @@ tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
       Keep shared setup, options, and single-response instructions in prompt. Choices are not
       subquestions. Put separately printed response prompts in subquestions in printed order.
       Join continuations within the interval. Skip booklet instructions, headers, footers, blank
-      work space, and reference sheets. Preserve extracted math and relevant diagram/table text;
-      do not solve or reconstruct missing visual information.
+      work space, and reference sheets.
+      The main goal is organization: group the available text into the correct questions and
+      subquestions with accurate source pages. Copy extracted math and relevant diagram/table
+      text as supplied, even when symbols are garbled, incomplete, or out of order. Easy,
+      unambiguous formatting or notation fixes are welcome when the intended text is clear
+      from the extraction. Otherwise preserve it as supplied; do not infer missing content,
+      solve questions, or reconstruct missing visuals.
+      Make one best-effort pass. Do not reread pages or dwell on ambiguous math to improve its
+      transcription; preserve the available text and move on. Check grouping, required fields,
+      and source pages once, then save.
       Save start_page, end_page, and questions using save_transcription; an empty questions object
       is correct for intervals with no complete questions. Return the saved path.
