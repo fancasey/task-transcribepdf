@@ -17,8 +17,8 @@ from contract import (
     ReadOutput,
     SaveInput,
     SaveOutput,
-    validate_save,
 )
+from plugin.validation import validate_save
 
 SAMPLE = Path(__file__).parent / "data" / SOURCE
 

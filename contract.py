@@ -71,31 +71,42 @@ TOOLS = {
 TASKS = {Task.TRANSCRIBE_EXAMS: (TranscribeInput, SaveOutput)}
 
 
-def validate_interval(start, end):
-    if not 1 <= start <= end <= PAGE_COUNT or end - start + 1 > MAX_PAGES_PER_READ:
-        raise ValueError("Select a contiguous interval of one to five pages between 1 and 28")
-
-
-def validate_save(value):
-    validate_interval(value.start_page, value.end_page)
-    if any(not key.isascii() or not key.isdecimal() for key in value.questions):
-        raise ValueError("questions must map numeric question IDs to question records")
-    for key, question in value.questions.items():
-        if key not in QUESTION_PAGES or question.pages != QUESTION_PAGES[key]:
-            raise ValueError("Question pages must match the complete source question")
-        if (not question.pages or question.pages != sorted(set(question.pages))
-                or any(page < value.start_page or page > value.end_page for page in question.pages)):
-            raise ValueError("Question pages must be distinct, ordered, and inside the selected interval")
-
-
 # One-based PDF page numbers, independent of submitted provenance.
 QUESTION_PAGES = {
-    **{str(q): [page] for page, ids in {
-        2: range(1, 4), 3: range(4, 7), 4: range(7, 9), 5: range(9, 12),
-        6: range(12, 14), 7: range(14, 17), 8: range(17, 19),
-        9: range(19, 22), 10: range(22, 25),
-        **{page: [page + 14] for page in range(11, 22)},
-    }.items() for q in ids},
+    "1": [2],
+    "2": [2],
+    "3": [2],
+    "4": [3],
+    "5": [3],
+    "6": [3],
+    "7": [4],
+    "8": [4],
+    "9": [5],
+    "10": [5],
+    "11": [5],
+    "12": [6],
+    "13": [6],
+    "14": [7],
+    "15": [7],
+    "16": [7],
+    "17": [8],
+    "18": [8],
+    "19": [9],
+    "20": [9],
+    "21": [9],
+    "22": [10],
+    "23": [10],
+    "24": [10],
+    "25": [11],
+    "26": [12],
+    "27": [13],
+    "28": [14],
+    "29": [15],
+    "30": [16],
+    "31": [17],
+    "32": [18],
+    "33": [19],
+    "34": [20],
+    "35": [21],
     "36": [22, 23],
 }
-
