@@ -3,9 +3,9 @@
 import re
 
 from contract import OUTPUT_PATH, QUESTION_PAGES
-from plugin.validation import validate_interval
 
 from .checks import load_saved, result
+from .validation import validate_interval
 
 # Only these questions have distinct response prompts in the printed exam.
 SUBQUESTION_ANCHORS = {

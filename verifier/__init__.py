@@ -3,10 +3,10 @@
 from dataclasses import asdict
 
 from contract import MAX_PAGES_PER_READ, OUTPUT_PATH, Task, Tool
-from plugin.validation import validate_save
 
 from . import transcribe
 from .checks import load_saved, result
+from .validation import validate_save
 
 
 def verify_input(tool, value):

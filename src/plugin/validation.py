@@ -1,4 +1,4 @@
-"""Runtime checks shared by tools and verifiers."""
+"""Runtime checks for tool inputs."""
 
 from contract import MAX_PAGES_PER_READ, PAGE_COUNT, QUESTION_PAGES
 
