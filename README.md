@@ -7,12 +7,27 @@ its text by question and subquestion. PDFium extracts embedded text locally;
 the agent uses a text-only model. The plugin performs no OCR and makes no
 network requests.
 
+## Exam attribution
+
+New York State Education Department, The University of the State of New York.
+*Regents High School Examination: Algebra II*. August 18, 2026,
+12:30–3:30 p.m. Regular-size examination booklet, 28 pages.
+[Official exam PDF](https://nysedregwebapp.azurewebsites.net/algebratwo/826/algtwo-82026-exam.pdf)
+ · [NYSED exam archive](https://nysedregwebapp.azurewebsites.net/algebratwo/).
+
+The examination is bundled at `src/plugin/data/algtwo-82026-exam.pdf`.
+Exam questions and any transcriptions of them are attributed to NYSED;
+the plugin's authors created the transcription software. The project's MIT
+license does not grant rights to the examination or its third-party content.
+This is an independent project and does not imply NYSED endorsement.
+See [third-party attribution](THIRD_PARTY_NOTICES.md).
+
 ## Tools
 
 | Tool | Does | Code |
 |---|---|---|
 | `read_pdf` | Returns the exam's page count and embedded text for one to five distinct, increasing, one-based page numbers. The bundled exam has 28 pages; page 24 has no embedded text and returns an empty string | `src/plugin/transcribe.py` |
-| `save_transcription` | Writes the selected interval and its complete questions as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path and full transcription | `src/plugin/transcribe.py` |
+| `save_transcription` | Writes the selvected interval and its complete questions as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path and full transcription | `src/plugin/transcribe.py` |
 
 ### Tasks
 

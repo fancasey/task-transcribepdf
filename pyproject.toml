@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nanoagent-transcribe-exams"
-version = "0.10.4"
+version = "0.10.5"
 description = "Transcribe complete questions from selected Algebra II Regents exam pages into JSON"
 requires-python = ">=3.12"
 dependencies = ["mcp>=1.27,<2", "slimconfig", "pypdfium2>=4.30,<6"]

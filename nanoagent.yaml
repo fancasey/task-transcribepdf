@@ -1,7 +1,7 @@
 _ > nanoagent.plugin.v0001.ManifestConfig:
 id: transcribe-exams
 name: Organize Exam Questions
-version: 0.10.4
+version: 0.10.5
 status: ready
 spec: nanoagent.plugin/v0001
 
