@@ -1,10 +1,13 @@
 _ > nanoagent.plugin.v0001.ProductConfig:
-tagline: "Organize exam PDF questions into JSON"
-summary: "The agent organizes the original Algebra II Regents exam by question and subquestion."
+tagline: "Turn selected exam pages into question JSON"
+summary: "Transcribe complete questions from one to five pages of the bundled August 2026 New York Algebra II Regents exam, preserving subquestions and source page numbers."
 highlights:
-  - "Reads selectable text from the exam PDF"
-  - "Keeps multiple-choice options with their questions"
-  - "Joins multipart questions across pages"
+  - "Reads embedded PDF text locally, without OCR"
+  - "Keeps shared setup and multiple-choice options with each question"
+  - "Includes only questions fully contained in the selected interval"
+  - "Records source pages and checks question coverage and structure"
 steps:
-  - "Run the task on the bundled exam"
-  - "Review the questions and verification result"
+  - "Choose an inclusive start_page and end_page within pages 1–28, covering at most five pages"
+  - "Run transcribe-exams to save transcriptions/questions.json"
+  - "Review the JSON and verification result; math and diagrams may lose detail during text extraction"
+  - "Keep a copy before running another interval: each save replaces the previous file"

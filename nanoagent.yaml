@@ -1,7 +1,7 @@
 _ > nanoagent.plugin.v0001.ManifestConfig:
 id: transcribe-exams
 name: Organize Exam Questions
-version: 0.10.0
+version: 0.10.1
 status: ready
 spec: nanoagent.plugin/v0001
 
@@ -17,13 +17,13 @@ permissions > nanoagent.plugin.v0001.PermissionsConfig:
 
 tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
   read_pdf:
-    description: Extract embedded text from up to five pages of the original Algebra II Regents exam PDF
+    description: Read embedded text from one to five distinct, increasing, one-based pages of the bundled 28-page Algebra II Regents exam
   save_transcription:
-    description: Save exam questions and their subquestions as JSON
+    description: Save the selected page interval and complete questions, subquestions, and source pages to transcriptions/questions.json, replacing the previous save
 
 tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
   transcribe-exams:
-    description: Organize the August 2026 Algebra II Regents exam by question and subquestion
+    description: Transcribe complete questions from a one-to-five-page interval of the bundled August 2026 Algebra II Regents exam into JSON
     runner: agent
     tools: [read_pdf, save_transcription]
     reference: null

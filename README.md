@@ -4,14 +4,15 @@ A NanoAgent plugin whose task, `transcribe-exams`, organizes the original
 August 2026 New York Algebra II Regents exam into JSON. The agent reads
 [the bundled PDF](src/plugin/data/algtwo-82026-exam.pdf) in page order and groups
 its text by question and subquestion. PDFium extracts embedded text locally;
-the agent uses a text-only model, with no OCR or network requests.
+the agent uses a text-only model. The plugin performs no OCR and makes no
+network requests.
 
 ## Tools
 
 | Tool | Does | Code |
 |---|---|---|
 | `read_pdf` | Returns the exam's page count and embedded text for one to five distinct, increasing, one-based page numbers. The bundled exam has 28 pages; page 24 has no embedded text and returns an empty string | `src/plugin/transcribe.py` |
-| `save_transcription` | Writes the questions object as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path | `src/plugin/transcribe.py` |
+| `save_transcription` | Writes the selected interval and its complete questions as UTF-8 JSON to `transcriptions/questions.json` in the workspace, replacing any previous save, and returns its path | `src/plugin/transcribe.py` |
 
 ### Tasks
 
@@ -57,7 +58,7 @@ available text without solving questions or reconstructing missing visuals.
 ### Verification
 
 The verifier checks only complete questions within the requested interval,
-using an independent question-to-page reference in `contract.py`. It requires
+using a fixed question-to-page reference in `contract.py`. It requires
 the saved interval to match the task input and rejects missing, unexpected,
 cut-off, or incorrectly attributed questions. Questions 34, 35, and 36 have
 three, two, and four subquestions respectively; other questions have none.
@@ -74,16 +75,26 @@ links in the output path. Saves use a temporary file followed by replacement.
 
 ```text
 ├── nanoagent.yaml       # manifest, permissions, tools, and task instructions
-├── contract.py          # shared tool/task enums and input/output types
+├── contract.py          # declarations only: enums, types, constants, and page reference
 ├── pyproject.toml       # package and development dependencies
 ├── uv.lock              # locked dependencies
-├── src/plugin/          # MCP server (__main__.py) and tools (transcribe.py)
+├── src/plugin/          # MCP server, tools, and runtime input validation
 │   └── data/            # bundled original exam PDF
-├── verifier/            # tool checks, saved-file checks, and exam task scoring
+├── verifier/            # independent validation, saved-file checks, and task scoring
 ├── tests/               # PDF reads, saves, file validation, MCP, and verifier tests
 ├── ui/                  # renderer entry point and styles
 └── product/             # catalog description and icon
 ```
+
+### Upload compatibility
+
+`contract.py` contains declarations only. Its `QUESTION_PAGES` reference is a
+literal mapping; functions and computed mappings belong outside the contract.
+Runtime input checks live in `src/plugin/validation.py`. The verifier has its
+own checks in `verifier/validation.py` because it cannot import plugin runtime
+modules. Keep these checks consistent when changing validation rules. Verifier
+modules use relative imports for their own helpers and import shared constants
+and types from `contract`.
 
 ## Develop and run
 
