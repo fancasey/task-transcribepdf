@@ -1,11 +1,10 @@
 _ > nanoagent.plugin.v0001.ProductConfig:
-tagline: "Transcribe exam packets into JSON"
-summary: "Choose ELA, Algebra II, or both and select student IDs. The agent saves the questions, scoring rubric, and handwritten responses as organized JSON files."
+tagline: "Organize exam PDF questions into JSON"
+summary: "The agent organizes the original Algebra II Regents exam by question and subquestion."
 highlights:
-  - "Connects questions, scoring criteria, and responses by question ID"
-  - "Keeps multi-page responses in order"
-  - "Reports organization and transcription penalties separately"
+  - "Reads selectable text from the exam PDF"
+  - "Keeps multiple-choice options with their questions"
+  - "Joins multipart questions across pages"
 steps:
-  - "Select the students to transcribe for each subject"
-  - "The agent reads and saves the exam packet"
-  - "Review the JSON files and verification report"
+  - "Run the task on the bundled exam"
+  - "Review the questions and verification result"

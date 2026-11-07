@@ -1,8 +1,8 @@
-"""NanoAgent tool and task contracts for exam transcription."""
+"""NanoAgent contracts for organizing exam questions."""
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Annotated, Any
+from typing import Annotated
 
 from slimconfig import Output
 
@@ -16,22 +16,13 @@ class Task(Enum):
     TRANSCRIBE_EXAMS = "transcribe-exams"
 
 
-SUBJECTS = {"ela": "student_responses", "alg2": "students"}
-STUDENT_IDS = {"ela": ("92", "93", "94", "95", "96", "97", "98", "99"), "alg2": ("1", "2", "3", "4", "5", "6")}
-DOCUMENT_TYPES = ("questions", "rubric", "student_response")
-OUTPUT_FOLDER = "transcriptions"
+SOURCE = "algtwo-82026-exam.pdf"
+OUTPUT_PATH = "transcriptions/questions.json"
 MAX_PAGES_PER_READ = 3
 
 
 @dataclass
-class DocumentInput(Output):
-    subject: Annotated[str, "ela or alg2 (math)"]
-    document_type: Annotated[str, "questions, rubric, or student_response"]
-    student_id: Annotated[str | None, "Student ID for student_response only"]
-
-
-@dataclass
-class ReadInput(DocumentInput):
+class ReadInput(Output):
     pages: Annotated[list[int], "One to three distinct one-based PDF page numbers in reading order"]
 
 
@@ -42,22 +33,20 @@ class PdfPage(Output):
 
 
 @dataclass
-class PageImage(Output):
-    media_type: str
-    data: str
-
-
-@dataclass
 class ReadOutput(Output):
     page_count: int
     pages: list[PdfPage]
-    images: list[PageImage]
 
 
 @dataclass
-class SaveInput(DocumentInput):
-    questions: Annotated[dict[str, Any], "Question IDs mapped to structured transcription records"]
-    supplementary_info: Annotated[dict[str, Any], "Shared directions, scoring guidance and headings"]
+class Question(Output):
+    prompt: Annotated[str, "Question text, shared setup and any multiple-choice options"]
+    subquestions: Annotated[list[str], "Separate prompts in printed order, or an empty list"]
+
+
+@dataclass
+class SaveInput(Output):
+    questions: Annotated[dict[str, Question], "Printed question numbers mapped to their question records"]
 
 
 @dataclass
@@ -67,18 +56,11 @@ class SaveOutput(Output):
 
 @dataclass
 class TranscribeInput(Output):
-    ela_students: Annotated[list[str], "ELA IDs 92–99. Use an empty list to skip ELA."]
-    math_students: Annotated[list[str], "Algebra II IDs 1–6. Use an empty list to skip math."]
-
-
-@dataclass
-class TranscribeOutput(Output):
-    folder: str
-    files: Annotated[list[str], "Paths returned by save_transcription for this request"]
+    pass
 
 
 TOOLS = {
     Tool.READ_PDF: (ReadInput, ReadOutput),
     Tool.SAVE_TRANSCRIPTION: (SaveInput, SaveOutput),
 }
-TASKS = {Task.TRANSCRIBE_EXAMS: (TranscribeInput, TranscribeOutput)}
+TASKS = {Task.TRANSCRIBE_EXAMS: (TranscribeInput, SaveOutput)}
